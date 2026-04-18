@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(osascript *)",
+      "Bash(python3 *)",
+      "Bash(codex --help)",
+      "Bash(gemini --help)"
+    ]
+  }
+}
