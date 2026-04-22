@@ -4,7 +4,10 @@
       "Bash(osascript *)",
       "Bash(python3 *)",
       "Bash(codex --help)",
-      "Bash(gemini --help)"
+      "Bash(gemini --help)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git add *)"
     ]
   }
 }
