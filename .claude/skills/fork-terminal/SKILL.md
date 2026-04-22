@@ -1,6 +1,6 @@
 ---
 name: fork-terminal-skill
-description: Fork a terminal session to a new terminal window. Use this when the user requests 'fork terminal' or 'new terminal: <command>'.
+description: Fork a terminal session to a new terminal window. Use this when the user requests 'fork terminal' or 'new terminal: <command>'. 'fork session: <command>'.
 ---
 
 ## Purpose
@@ -14,10 +14,24 @@ ENABLE_RAW_CLI: true
 ENABLE_GEMENI_CLI: true
 ENABLE_CLAUDE_CLI: true
 ENABLE_CODEX_CLI: true
+AGENTIC_CODING_TOOLS: claude-code, codex-cli, gemini-cli
 
 ## Instructions
 
 - Based on the user's request, follow the `Cookbook` section to determine which tool to use.
+
+### Fork Summary User Prompts
+
+- IF: The user requests a fork terminal with a summary. This ONLY works for our agentic coding tools 'AGENTIC_CODING_TOOLS'. The tool MUST BE enabled as well.
+- THEN: 
+  - Read, and REPLACE the ".claude/skills/fork-terminal/prompts/fork_summary_user_prompt.md with the history of the conversation between you and the user so far.
+  - include the next users request in the 'Next User Request" section.
+  - this will be what you pass into the PROMPT parameter of the agentic coding tool.
+  - IMPORTANT: to be clear, don't update the file directly, just read it, and use it to craft a new prompt in the structure provided for the new fork
+- EXAMPLES:
+- "fork terminal use claude code to <xyz> summarize work so far"
+- "spin up a new terminal request <xyz> using claude code include summary"
+- "create a new terminal to <xyz> with claude code with summary"
 
 ## Workflow
 
